@@ -1,0 +1,2 @@
+ngMadLibs = angular.module('ngMadLibs',[
+])
