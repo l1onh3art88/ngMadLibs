@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ngMadLibs">
 <head>
   <title>NgMadLibs</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
+<!--    ng-init= "male_name=''; job_title=''; tedious_task=''; dirty_task=''; celebrity=''; useless-skill=''; adjective=''; obnoxious_celebrity=''; huge_number='';" -->
 
 </body>
 </html>

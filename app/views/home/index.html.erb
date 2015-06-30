@@ -1,14 +1,70 @@
-<div class="container-fluid" ng-app="ngMadLibs">
-  <div class="panel panel-success">
-    <div class="panel-heading">
-      <h1 ng-if="name">Hello, {{name}}</h1>
+<div class="container-fluid">
+  <header>
+    <div class = "row">
+      <div id="smileydiv">
+        <%= image_tag"mad-lib-happy-face.png", :id =>"smiley" %>
+        <%= image_tag"ng-mad-libs-logo.png", :id => "logo" %>
+        <h1 id = "logocaption"> <strong>Automate This!</strong></h1>
+      </div>
     </div>
-    <div class="panel-body">
-      <form class="form-inline">
-        <div class="form-group">
-          <input class="form-control" type="text" placeholder="Enter your name" autofocus ng-model="name">
-        </div>
-      </form>
+  </header>
+ <section class = "wordbox">
+    <h1> Provide the following words: </h1>
+    <br>
+    <form class = "form-inline">
+      <div class = "form-group">
+        <input class = "form-control" type="text" placeholder= "Male name" autofocus ng-model = "male_name" value = "male name">
+      </div>
+    </form>
+    <form class = "form-inline">
+      <div class = "form-group">
+        <input class = "form-control" type="text" placeholder= "Dirty task" autofocus ng-model = "dirty_task" value = "dirty task">
+      </div>
+  </form>
+  <form class = "form-inline">
+    <div class = "form-group">
+      <input class = "form-control" type="text" placeholder= "Obnoxious celebrity" autofocus ng-model = "obnoxious_celebrity" value="obnoxious celebrity">
     </div>
-  </div>
+  </form>
+    <br>
+  <form class = "form-inline">
+    <div class = "form-group">
+      <input class = "form-control" type="text" placeholder= "Job title" autofocus ng-model = "job_title" value = "job title">
+    </div>
+  </form>
+  <form class = "form-inline">
+    <div class = "form-group">
+      <input class = "form-control" type="text" placeholder= "Celebrity" autofocus ng-model = "celebrity" value = "celebrity">
+    </div>
+  </form>
+  <form class = "form-inline">
+    <div class = "form-group">
+      <input class = "form-control" type="text" placeholder= "Huge number" autofocus ng-model = "huge_number" value="huge number">
+    </div>
+  </form>
+    <br>
+   <form class = "form-inline">
+    <div class = "form-group">
+      <input class = "form-control" type="text" placeholder= "Tedious task" autofocus ng-model = "tedious_task" value="tedious task">
+    </div>
+    </form>
+   <form class = "form-inline">
+     <div class = "form-group">
+      <input class = "form-control" type="text" placeholder= "Useless skill" autofocus ng-model = "useless_skill" value="useless skill">
+     </div>
+    </form>
+   <form class = "form-inline">
+    <div class = "form-group">
+     <input class = "form-control" type="text" placeholder= "Adjective" autofocus ng-model = "adjective" value = "adjective">
+    </div>
+   </form>
+  </section>
+  <section class = "textbox">
+    <p>
+        {{ male_name }} was a {{job_title}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tedious_task}} and {{dirty_task}}. So, {{male_name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so she studied programming instead. 
+
+        What a great decision! With her new skills, {{male_name}} built a(n) {{adjective}} robot named {{obnoxious_celebrity}} that         not only loved {{dirty_task}} but did it {{huge_number}} times faster. 
+    </p>
+  </section>
+  
 </div>
