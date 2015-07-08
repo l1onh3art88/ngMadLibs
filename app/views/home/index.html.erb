@@ -11,7 +11,7 @@
  <section class = "wordbox">
     <h1> Provide the following words: </h1>
     <br>
-    <form name = "madlibform"class = "form-inline">
+    <form name = "madlibform" id ="madlibs"class = "form-inline" novalidate ng-submit="submit()" ng-hide="madlibs">
       <div class = "form-group">
         <input class = "form-control" type="text" name = "male_name"placeholder= "Male name" autofocus ng-model="male_name" required>
         <input class = "form-control" type="text" name="dirty_task"placeholder= "Dirty task" autofocus ng-model = "dirty_task" required>
@@ -25,35 +25,39 @@
         <input class = "form-control" type="text" name="useless_skill"placeholder= "Useless skill" autofocus ng-model = "useless_skill" required>
         <input class = "form-control" type="text" name="adjective"placeholder= "Adjective" autofocus ng-model = "adjective" required>
       </div>
-   </form>
    
-   <span class = "error" ng-if="firstrow.male_name.$error.required">
-     A male name is required.
-   </span>
-   <span class ="error" ng-if="firstrow.dirty_task.$error.required">
-     A dirty task is required.
-   </span>
-   <span class = "error" ng-if="firstrow.obnoxius_celebrity.$error.required">
-     An obnoxious celebrity name is required.
-   </span>
-   <span class = "error" ng-if=" secondrow.job_title.$error.required">
-     A job title is required.   
-   </span>
-   <span class = "error" ng-if = "secondrow.celebrity.$error.required">
-     A celebrity name is required.
-   </span>
-   <span class = "error"ng-if="secondrow.huge_number.$error.required">
-     A huge number is required.
-   </span>
-   <span class = "error" ng-if= "thirdrow.tedius_task.$error.required">
-     A tedius task is required.
-   </span>
-   <span class = "error" ng-if="thirdrow.useless_skill.$error.required">
-     A useless skill is required.
-   </span>
-   <span class = "error" ng-if="thirdrow.adjective.$error.required"></span>
+   
+   
+   <button type = "submit" ng-click = "madlibs = !madlibs"> Generate My Mad Lib </button>
 
-   <button type = "button" ng-click = "madlibs = !madlibs"> Generate My Mad Lib </button>
+ </form>
+  <div ng-if="madlibform.$submitted" ng-messages="madlibform.male_name.$error" role="alert">  
+     <span class = "error" ng-message="required"> Field is required</span>
+   </div>
+  <div ng-if="madlibform.$submitted" ng-messages="madlibform.dirty_task.$error">  
+     <span class = "error" ng-message="required"> Field is required</span>
+   </div>
+   <div ng-if="madlibform.$submitted" ng-messages="madlibform.obnoxious_celebrity.$error">  
+     <span class = "error" ng-message="required"> Field is required</span>
+   </div>
+   <div ng-if="madlibform.$submitted" ng-messages="madlibform.job_title.$error">  
+ <span class = "error" ng-message="required"> Field is require</span>
+   </div>
+   <div ng-if="madlibform.$submitted" ng-messages="madlibform.celebrity.$error">  
+     <span class = "error" ng-message="required"> Field is required</span>
+   </div>
+  <div ng-if="madlibform.$submitted" ng-messages="madlibform.huge_number.$error">  
+     <span class = "error" ng-message="required"> Field is required</span>
+   </div>
+   <div ng-if="madlibform.$submitted" ng-messages="madlibform.tedious_task.$error">  
+     <span class = "error" ng-message="required"> Field is required</span>
+   </div>
+   <div ng-if="madlibform.$submitted" ng-messages="madlibform.useless_skill.$error">  
+     <span class = "error" ng-message="required"> Field is required</span>
+   </div>
+   <div ng-if="madlibform.$submitted" ng-messages="madlibform.adjective.$error">  
+     <span class = "error" ng-message="required"> Field is required</span>
+   </div>
   </section>
   <section class = "textbox" ng-show="madlibs">
     <p>
@@ -61,6 +65,8 @@
 
         What a great decision! With her new skills, {{male_name}} built a(n) {{adjective}} robot named {{obnoxious_celebrity}} that         not only loved {{dirty_task}} but did it {{huge_number}} times faster. 
     </p>
+   <button type = "reset" form="madlibs" ng-click = "madlibs = !madlibs"> Start Over </button>
+
   </section>
-  
+
 </div>
