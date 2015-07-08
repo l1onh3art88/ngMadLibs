@@ -11,55 +11,51 @@
  <section class = "wordbox">
     <h1> Provide the following words: </h1>
     <br>
-    <form class = "form-inline">
+    <form name = "madlibform"class = "form-inline">
       <div class = "form-group">
-        <input class = "form-control" type="text" placeholder= "Male name" autofocus ng-model="male_name">
+        <input class = "form-control" type="text" name = "male_name"placeholder= "Male name" autofocus ng-model="male_name" required>
+        <input class = "form-control" type="text" name="dirty_task"placeholder= "Dirty task" autofocus ng-model = "dirty_task" required>
+        <input class = "form-control" type="text" name="obnoxious_celebrity"placeholder= "Obnoxious celebrity" autofocus ng-model = "obnoxious_celebrity" required>
+        <br>
+         <input class = "form-control" type="text" name = "job_title" placeholder= "Job title" autofocus ng-model = "job_title" required>
+        <input class = "form-control" type="text" name="celebrity"placeholder= "Celebrity" autofocus ng-model = "celebrity" required>
+        <input class = "form-control" type="number" name ="huge_number"placeholder= "Huge number" autofocus ng-model = "huge_number" required>
+        <br>
+         <input class = "form-control" type="text" name="tedius_task"placeholder= "Tedious task" autofocus ng-model = "tedious_task" required>
+        <input class = "form-control" type="text" name="useless_skill"placeholder= "Useless skill" autofocus ng-model = "useless_skill" required>
+        <input class = "form-control" type="text" name="adjective"placeholder= "Adjective" autofocus ng-model = "adjective" required>
       </div>
-    </form>
-    <form class = "form-inline">
-      <div class = "form-group">
-        <input class = "form-control" type="text" placeholder= "Dirty task" autofocus ng-model = "dirty_task" >
-      </div>
-  </form>
-  <form class = "form-inline">
-    <div class = "form-group">
-      <input class = "form-control" type="text" placeholder= "Obnoxious celebrity" autofocus ng-model = "obnoxious_celebrity" >
-    </div>
-  </form>
-    <br>
-  <form class = "form-inline">
-    <div class = "form-group">
-      <input class = "form-control" type="text" placeholder= "Job title" autofocus ng-model = "job_title">
-    </div>
-  </form>
-  <form class = "form-inline">
-    <div class = "form-group">
-      <input class = "form-control" type="text" placeholder= "Celebrity" autofocus ng-model = "celebrity" >
-    </div>
-  </form>
-  <form class = "form-inline">
-    <div class = "form-group">
-      <input class = "form-control" type="text" placeholder= "Huge number" autofocus ng-model = "huge_number" >
-    </div>
-  </form>
-    <br>
-   <form class = "form-inline">
-    <div class = "form-group">
-      <input class = "form-control" type="text" placeholder= "Tedious task" autofocus ng-model = "tedious_task" >
-    </div>
-    </form>
-   <form class = "form-inline">
-     <div class = "form-group">
-      <input class = "form-control" type="text" placeholder= "Useless skill" autofocus ng-model = "useless_skill" >
-     </div>
-    </form>
-   <form class = "form-inline">
-    <div class = "form-group">
-     <input class = "form-control" type="text" placeholder= "Adjective" autofocus ng-model = "adjective" >
-    </div>
    </form>
+   
+   <span class = "error" ng-if="firstrow.male_name.$error.required">
+     A male name is required.
+   </span>
+   <span class ="error" ng-if="firstrow.dirty_task.$error.required">
+     A dirty task is required.
+   </span>
+   <span class = "error" ng-if="firstrow.obnoxius_celebrity.$error.required">
+     An obnoxious celebrity name is required.
+   </span>
+   <span class = "error" ng-if=" secondrow.job_title.$error.required">
+     A job title is required.   
+   </span>
+   <span class = "error" ng-if = "secondrow.celebrity.$error.required">
+     A celebrity name is required.
+   </span>
+   <span class = "error"ng-if="secondrow.huge_number.$error.required">
+     A huge number is required.
+   </span>
+   <span class = "error" ng-if= "thirdrow.tedius_task.$error.required">
+     A tedius task is required.
+   </span>
+   <span class = "error" ng-if="thirdrow.useless_skill.$error.required">
+     A useless skill is required.
+   </span>
+   <span class = "error" ng-if="thirdrow.adjective.$error.required"></span>
+
+   <button type = "button" ng-click = "madlibs = !madlibs"> Generate My Mad Lib </button>
   </section>
-  <section class = "textbox">
+  <section class = "textbox" ng-show="madlibs">
     <p>
         {{ male_name }} was a {{job_title}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tedious_task}} and {{dirty_task}}. So, {{male_name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so she studied programming instead. 
 

@@ -1,4 +1,5 @@
-angular.module('ngMadLibs',[]).controller('myCtrl', function($scope){
+var ngMadLibs =angular.module('ngMadLibs',['ngMessages']);
+  ngMadLibs.controller('myCtrl', function($scope){
   $scope.male_name ="Bob";
   $scope.dirty_task="Stuff";
   $scope.obnoxious_celebrity="Paris Hilton";
@@ -8,5 +9,6 @@ angular.module('ngMadLibs',[]).controller('myCtrl', function($scope){
   $scope.tedious_task="Knitting";
   $scope.useless_skill="jumping over small distances";
   $scope.adjective="hilarious";
+  $scope.madlibs = false;
 
 });
